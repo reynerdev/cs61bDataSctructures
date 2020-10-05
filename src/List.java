@@ -35,22 +35,62 @@ public class List {
 
     }
 
-    public iterativeSize(){
+    public int iterativeSize(){
 
         /* Iterative case to return the size of the Linked List*/
+        int totalSize = 0;
+        List p = this;
+        while(p != null){
 
-        while(rest != null){
-
+            totalSize += 1 ;
+            p = p.rest ;
 
 
         }
+        return  totalSize;
+    }
+
+    public int iterativeGet(int i ){
+
+        List p = this ;
+        int count = 0 ;
+        int value ;
+        while(p != null){
+
+            if (count == i){
+                System.out.println(p.first);
+                return p.first;
+            }else{
+                count += 1 ;
+                p = p.rest;
+            }
+
+
+        }
+
+        return -1;
+    }
+
+
+    public int get(int i ){
+
+        if(i == 0){
+            return  first;
+        }
+
+        return rest.get(i-1);
+
     }
 
     public static void main(String[] args) {
         List L = new List(10,null);
          L = new List(15, L);
-         L = new List(10,L);
+         L = new List(13,L);
          System.out.println(L.size());
+        System.out.println(L.iterativeSize());
+
+        System.out.println(L.iterativeGet(0));
+        System.out.println(L.get(0));
 
     }
 
