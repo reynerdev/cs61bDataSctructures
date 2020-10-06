@@ -15,12 +15,22 @@ public class SSList {
         first = new List(x,null);
     }
 
-    public addFirst(int x){
+    public void addFirst(int x){
 
+        this.first = new List(x,this.first);
+
+
+    }
+
+
+    public int getFirst(){
 
     }
 
     public static void main(String[] args) {
 
+        SSList list = new SSList(1);
+        list.addFirst(2);
+        System.out.println();
     }
 }
