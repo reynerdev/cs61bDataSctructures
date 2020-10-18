@@ -23,10 +23,6 @@ public class SSList {
     }
 
 
-    public int getFirst(){
-
-    }
-
     public static void main(String[] args) {
 
         SSList list = new SSList(1);
